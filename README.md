@@ -52,7 +52,7 @@ El aplicativo **no usa `eval()`**. En su lugar:
 
 ## ▶️ Cómo usar
 
-1. Visita el aplicativo en: [https://github.com/CursoFullStack25/FOUNDERZ_M2_31/settings/pages](https://github.com/CursoFullStack25/FOUNDERZ_M2_31/settings/pages)
+1. Visita el aplicativo en: [https://github.com/CursoFullStack25/FOUNDERZ_M2_31](https://github.com/CursoFullStack25/FOUNDERZ_M2_31)
 2. Selecciona un reto.
 3. Escribe la fórmula que resuelve el problema.
 4. Haz clic en **"Probar"** y observa los resultados.
