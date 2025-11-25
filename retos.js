@@ -9,6 +9,7 @@ const RETOS = [
     enunciado:
       "Crea una función que reciba un número y devuelva el doble de ese número.",
     ejemplo: "doble(5) → 10",
+    respuesta: "x * 2",
     parametros: [{ nombre: "x", tipo: "number" }],
     casosPrueba: [
       { entrada: 5, salidaEsperada: 10 },
@@ -24,6 +25,7 @@ const RETOS = [
     enunciado:
       "Crea una función que reciba un nombre (string) y devuelva un saludo personalizado. Por ejemplo: 'Hola, Ana!'",
     ejemplo: "saludar('Ana') → 'Hola, Ana!'",
+    respuesta: "'Hola, ' + nombre + '!'",
     parametros: [{ nombre: "nombre", tipo: "string" }],
     casosPrueba: [
       { entrada: "Ana", salidaEsperada: "Hola, Ana!" },
@@ -39,6 +41,7 @@ const RETOS = [
     enunciado:
       "Crea una función que reciba la base y la altura de un rectángulo y devuelva su área (base × altura).",
     ejemplo: "areaRectangulo(4, 5) → 20",
+    respuesta: "base * altura",
     parametros: [
       { nombre: "base", tipo: "number" },
       { nombre: "altura", tipo: "number" },
@@ -57,6 +60,7 @@ const RETOS = [
     enunciado:
       "Crea una función que reciba un número y devuelva true si es par, false si es impar.",
     ejemplo: "esPar(4) → true, esPar(7) → false",
+    respuesta: "numero % 2 === 0",
     parametros: [{ nombre: "numero", tipo: "number" }],
     casosPrueba: [
       { entrada: 4, salidaEsperada: true },
@@ -72,6 +76,7 @@ const RETOS = [
     enunciado:
       "Crea una función que reciba un texto (string) y un número, y devuelva el texto repetido ese número de veces.",
     ejemplo: "repetir('Hola', 3) → 'HolaHolaHola'",
+    respuesta: "texto.repeat(veces)",
     parametros: [
       { nombre: "texto", tipo: "string" },
       { nombre: "veces", tipo: "number" },

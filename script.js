@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Vincular el botón "Probar" al validador
   vincularBotonProbar();
 
+  // Vincular el botón "Ver Respuesta" al mostrador de respuestas
+  vincularBotonRespuesta();
+
   // Permitir probar con Enter en el campo de fórmula
   const inputFormula = document.getElementById("formula-input");
   inputFormula.addEventListener("keypress", (e) => {
@@ -79,6 +82,14 @@ function asignarListenersRetos() {
 function vincularBotonProbar() {
   const botonProbar = document.getElementById("probar-btn");
   botonProbar.addEventListener("click", probarFormula);
+}
+
+/**
+ * Vincula el botón "Ver Respuesta" al mostrador de respuestas
+ */
+function vincularBotonRespuesta() {
+  const botonRespuesta = document.getElementById("respuesta-btn");
+  botonRespuesta.addEventListener("click", mostrarRespuesta);
 }
 
 // ===========================
@@ -438,4 +449,36 @@ function limpiarResultados() {
 function limpiarFormula() {
   const inputFormula = document.getElementById("formula-input");
   inputFormula.value = "";
+}
+
+/**
+ * Muestra la respuesta correcta del reto actual
+ */
+function mostrarRespuesta() {
+  if (!retoActual) {
+    mostrarError("Selecciona un reto primero.");
+    return;
+  }
+
+  if (!retoActual.respuesta) {
+    mostrarError("Este reto no tiene una respuesta disponible.");
+    return;
+  }
+
+  const inputFormula = document.getElementById("formula-input");
+  inputFormula.value = retoActual.respuesta;
+
+  // Limpiar resultados anteriores
+  limpiarResultados();
+
+  // Mostrar mensaje informativo
+  const contenedorResultados = document.getElementById("resultados");
+  contenedorResultados.innerHTML = `
+    <div class="resultado-item info">
+      <div class="resultado-detalle">
+        <div class="resultado-titulo">💡 Respuesta mostrada</div>
+        <div>Se ha insertado la solución correcta. Ahora puedes hacer clic en "Probar" para verificarla.</div>
+      </div>
+    </div>
+  `;
 }
