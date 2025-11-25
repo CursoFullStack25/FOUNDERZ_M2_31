@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Función Express — Plataforma educativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Función Express</h1>
+        <p class="subtitle">Ejercita y verifica funciones matemáticas de forma interactiva.</p>
+    </header>
+
+    <main>
+        <nav aria-label="Selector de retos">
+            <fieldset>
+                <legend>Selecciona un reto</legend>
+                <div class="reto-buttons" role="tablist" aria-label="Lista de retos">
+                    <button type="button" data-reto="1">Reto 1</button>
+                    <button type="button" data-reto="2">Reto 2</button>
+                    <button type="button" data-reto="3">Reto 3</button>
+                    <button type="button" data-reto="4">Reto 4</button>
+                    <button type="button" data-reto="5">Reto 5</button>
+                </div>
+            </fieldset>
+        </nav>
+
+        <section class="layout">
+            <!-- Enunciado (izquierda) -->
+            <article id="enunciado" aria-label="Enunciado del reto">
+                <h2>Enunciado</h2>
+                <p id="enunciado-contenido">Selecciona un reto para ver su enunciado aquí.</p>
+            </article>
+
+            <!-- Área de trabajo (derecha) -->
+            <aside id="area-trabajo" aria-label="Área de trabajo">
+                <h2>Área de trabajo</h2>
+
+                <form id="formula-form" aria-describedby="formula-hint">
+                    <label for="formula-input">Fórmula</label>
+                    <input id="formula-input" name="formula" type="text" inputmode="latin"
+                        aria-describedby="formula-hint" placeholder="p. ej. 2*x + 3">
+                    <small id="formula-hint">Introduce la expresión de la función en términos de <code>x</code>. Ej:
+                        <code>2*x + 3</code></small>
+
+                    <div class="controls">
+                        <button type="button" id="probar-btn">Probar</button>
+                    </div>
+                </form>
+
+                <section id="resultados" aria-live="polite" aria-atomic="true">
+                    <!-- Contenedor vacío donde se mostrarán los resultados de las pruebas -->
+                </section>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Función Express — Material educativo</p>
+    </footer>
+
+    <script src="retos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

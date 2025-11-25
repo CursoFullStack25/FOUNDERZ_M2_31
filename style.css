@@ -1,0 +1,512 @@
+/* ===========================
+   Función Express - Estilos
+   =========================== */
+
+/* Reset y Variables */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-success: #dcfce7;
+  --color-success-border: #22c55e;
+  --color-success-text: #166534;
+  --color-error: #fee2e2;
+  --color-error-border: #ef4444;
+  --color-error-text: #991b1b;
+  --color-bg: #f8fafc;
+  --color-card: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --border-radius: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Header
+   =========================== */
+header {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-hover) 100%
+  );
+  color: white;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+header .subtitle {
+  font-size: 1.125rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* ===========================
+   Main Content
+   =========================== */
+main {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+/* ===========================
+   Selector de Retos
+   =========================== */
+nav {
+  margin-bottom: var(--spacing-xl);
+}
+
+nav fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-sm);
+}
+
+nav legend {
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 0 var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.reto-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.reto-buttons button {
+  flex: 1 1 calc(20% - var(--spacing-md));
+  min-width: 120px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.reto-buttons button:hover {
+  border-color: var(--color-primary);
+  background-color: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.reto-buttons button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.reto-buttons button.active {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.reto-buttons button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   Layout de Dos Columnas
+   =========================== */
+.layout {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* ===========================
+   Enunciado (Izquierda)
+   =========================== */
+#enunciado {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: var(--spacing-lg);
+}
+
+#enunciado h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+}
+
+#enunciado-contenido {
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+/* ===========================
+   Área de Trabajo (Derecha)
+   =========================== */
+#area-trabajo {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+#area-trabajo h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+}
+
+/* ===========================
+   Formulario de Fórmula
+   =========================== */
+#formula-form {
+  margin-bottom: var(--spacing-xl);
+}
+
+#formula-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+#formula-input {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: #fafafa;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#formula-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background-color: white;
+}
+
+#formula-input::placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+#formula-hint {
+  display: block;
+  margin-top: var(--spacing-sm);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+#formula-hint code {
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-primary);
+}
+
+.controls {
+  margin-top: var(--spacing-lg);
+}
+
+#probar-btn {
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+#probar-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+#probar-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+#probar-btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+#probar-btn:disabled {
+  background-color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* ===========================
+   Resultados de Pruebas
+   =========================== */
+#resultados {
+  margin-top: var(--spacing-xl);
+}
+
+#resultados:empty {
+  display: none;
+}
+
+.resultado-item {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius);
+  border-left: 4px solid;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 0.95rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.resultado-item.exito {
+  background-color: var(--color-success);
+  border-left-color: var(--color-success-border);
+  color: var(--color-success-text);
+}
+
+.resultado-item.error {
+  background-color: var(--color-error);
+  border-left-color: var(--color-error-border);
+  color: var(--color-error-text);
+}
+
+.resultado-item::before {
+  content: "✅";
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.resultado-item.error::before {
+  content: "❌";
+}
+
+.resultado-detalle {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.resultado-titulo {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.resultado-resumen {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: #f8fafc;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  font-weight: 600;
+  text-align: center;
+}
+
+.resultado-resumen.todos-correctos {
+  background-color: var(--color-success);
+  color: var(--color-success-text);
+  border-color: var(--color-success-border);
+}
+
+.resultado-resumen.hay-errores {
+  background-color: var(--color-error);
+  color: var(--color-error-text);
+  border-color: var(--color-error-border);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+  background-color: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* ===========================
+   Media Queries - Responsive
+   =========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 45% 55%;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .reto-buttons button {
+    flex: 1 1 calc(33.333% - var(--spacing-md));
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  /* Layout apilado en móvil */
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  #enunciado {
+    position: static;
+  }
+
+  header {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  header .subtitle {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  nav fieldset {
+    padding: var(--spacing-md);
+  }
+
+  .reto-buttons {
+    gap: var(--spacing-sm);
+  }
+
+  .reto-buttons button {
+    flex: 1 1 calc(50% - var(--spacing-sm));
+    min-width: 0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+
+  #enunciado,
+  #area-trabajo {
+    padding: var(--spacing-lg);
+  }
+
+  #formula-input {
+    font-size: 1rem;
+  }
+
+  #probar-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .resultado-item {
+    font-size: 0.875rem;
+    padding: var(--spacing-sm);
+  }
+
+  .resultado-item::before {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .reto-buttons button {
+    flex: 1 1 100%;
+  }
+
+  #enunciado h2,
+  #area-trabajo h2 {
+    font-size: 1.25rem;
+  }
+}
